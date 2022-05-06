@@ -1,0 +1,1 @@
+# testovoe_zadanie_Bewise.ai
