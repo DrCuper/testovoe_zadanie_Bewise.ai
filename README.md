@@ -10,9 +10,11 @@ docker-compose up -d
 
 ## Пример запроса к POST API
 
+В запросах необходимо заменить YOURHOST на IP-адрес хоста сервера
+
 - cURL
 ```cURL
-curl --location --request POST 'http://158.69.169.128:8001/' \
+curl --location --request POST 'http://YOURHOST:8001/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "questions_num": 1
@@ -24,7 +26,7 @@ curl --location --request POST 'http://158.69.169.128:8001/' \
 import requests
 import json
 
-url = "http://158.69.169.128:8001/"
+url = "http://YOURHOST:8001/"
 
 payload = json.dumps({
   "questions_num": 1
