@@ -145,7 +145,8 @@ async def add_row(questions_num: question):
             cnt = questions_num.questions_num
 
             while True:
-
+                
+                #При запросе к https://jservice.io/api/ максимально число задач равняется 100, поэтому используем цикл для возможности ввода любых чисел
                 input_data(cnt)
 
                 cnt -= 100
