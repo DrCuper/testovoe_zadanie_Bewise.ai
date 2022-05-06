@@ -1,7 +1,42 @@
 # testovoe_zadanie_Bewise.ai
 Выполнено Ростовским Д.Е.
 
-Задачи:
+Для сборки проекта необходимо перейти в папку с репозиторием и вызвать команду  ## H2
+```bash
+docker-compose up -d
+```
+
+Пример запроса к POST API ## H2
+
+- cURL
+```cURL
+curl --location --request POST 'http://158.69.169.128:8001/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "questions_num": 1
+}'
+```
+
+- Python - Requests
+```Python
+import requests
+import json
+
+url = "http://158.69.169.128:8001/"
+
+payload = json.dumps({
+  "questions_num": 1
+})
+headers = {
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
+```
+
+Задачи ## H2
 
 1. С помощью Docker (предпочтительно - docker-compose) развернуть образ с любой опенсорсной СУБД (предпочтительно - PostgreSQL). Предоставить все необходимые скрипты и конфигурационные (docker/compose) файлы для развертывания СУБД, а также инструкции для подключения к ней. Необходимо обеспечить сохранность данных при рестарте контейнера (то есть - использовать volume-ы для хранения файлов СУБД на хост-машине.
 
