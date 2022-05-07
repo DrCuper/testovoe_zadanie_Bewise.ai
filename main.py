@@ -154,8 +154,14 @@ async def add_row(questions_num: question):
                 if cnt <= 0:
                     break
                 
+            if session.query(records).count() != 0:
+                
+                response = session.query(records).order_by(records.dt_insert.desc()).first()
+            
+            else:
 
-            response = session.query(records).order_by(records.dt_insert.desc()).first()
+                responce = {}
+
             session.close()
             
             return response
